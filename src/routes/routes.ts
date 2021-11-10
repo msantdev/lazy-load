@@ -10,9 +10,15 @@ interface IRoutes {
   children?: IRoutes[];
 }
 
-const LazyPage1 = lazy(() => import("../lazyload/pages/LazyPage1"));
-const LazyPage2 = lazy(() => import("../lazyload/pages/LazyPage2"));
-const LazyPage3 = lazy(() => import("../lazyload/pages/LazyPage3"));
+const LazyPage1 = lazy(
+  () => import(/* webpackChunkName:"LazyPage1" */ "../lazyload/pages/LazyPage1")
+);
+const LazyPage2 = lazy(
+  () => import(/* webpackChunkName:"LazyPage2" */ "../lazyload/pages/LazyPage2")
+);
+const LazyPage3 = lazy(
+  () => import(/* webpackChunkName:"LazyPage3" */ "../lazyload/pages/LazyPage3")
+);
 
 export const routes: IRoutes[] = [
   {
